@@ -1,0 +1,61 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="orange">
+    <img src="../../assets/LOGOQUEMDAMAIS.png" alt="quemDa+Logo" width="110px" class="ion-padding">
+    <ion-buttons slot="end">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="darkf" class="ion-text-center ion-padding">
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <div class="destaque">
+    <ion-text>
+      <h2><b>Leilões em destaque:</b></h2>
+    </ion-text>
+    <ion-grid>
+      <div *ngIf="notFoundD; else foundD"><h3>{{notFoundD}}</h3></div>
+      <ng-template #foundD>
+        <ion-row *ngFor="let anuncio of leiloesD" class="ion-justify-content-center">
+          <div class="itens" tappable (click)="selectLeilao(anuncio.leilao_id)">
+            <img src="{{ anuncio.imagem_principal }}" alt="imagem_veiculo" width="75%" height="50%">
+            <div class="infoItens">
+              <h4>
+                {{anuncio.fabricante}} {{anuncio.modelo}} {{anuncio.ano}}<br>
+                lance_inicial: {{anuncio.lance_inicial | currency : 'BRL'}}<br>
+                Útimo lance: {{anuncio.lance_final || '0' | currency : 'BRL'}}<br>
+                Anúncio disponível até: {{anuncio.data_final}}<br>
+              </h4>
+            </div>
+          </div>
+        </ion-row>
+      </ng-template>
+    </ion-grid>
+  </div>
+
+  <div class="outros">
+    <ion-text>
+      <h2><b>Outros leilões:</b></h2>
+    </ion-text>
+    <ion-grid>
+      <div *ngIf="notFound; else found"><h3>{{notFound}}</h3></div>
+      <ng-template #found>        
+        <ion-row *ngFor="let anuncio of leiloes" class="ion-justify-content-center">
+          <div class="itens" tappable (click)="selectLeilao(anuncio.leilao_id)">
+            <img src="{{ anuncio.imagem_principal }}" alt="imagem_veiculo" width="75%" height="50%">
+            <div class="infoItens">
+              <h4>
+                {{anuncio.fabricante}} {{anuncio.modelo}} {{anuncio.ano}}<br>
+                lance_inicial: {{anuncio.lance_inicial | currency : 'BRL'}}<br>
+                Útimo lance: {{anuncio.lance_final || '0' | currency : 'BRL'}}<br>
+                Anúncio disponível até: {{anuncio.data_final}}<br>
+              </h4>
+            </div>
+          </div>
+        </ion-row>
+      </ng-template>
+    </ion-grid>
+  </div>
+</ion-content>

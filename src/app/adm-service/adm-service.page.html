@@ -1,0 +1,82 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="orange">
+    <img src="../../assets/LOGOQUEMDAMAIS.png" alt="quemDa+Logo" width="110px" class="ion-padding">
+    <ion-buttons slot="end">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="darkf" class="ion-text-center">
+  <div *ngIf="notFound; else found">
+    <h3>{{notFound}}</h3>
+  </div>
+
+  <ng-template #found>
+    <div *ngIf="leiloes; else prox">
+      <h3>Leilões Cadastrados:</h3>
+      <ion-grid>
+        <ion-row *ngFor="let x of result" class="ion-justify-content-center" tappable (click)="verLeilao(X.leilao_id)">
+          <ion-col size="3"><b>Leilão:</b></ion-col>
+          <ion-col size="1"></ion-col>
+          <ion-col size="3"><b>Status:</b></ion-col>
+          <ion-col size="1"></ion-col>
+          <ion-col size="4"><b>participantes:</b></ion-col>
+        
+          <ion-col size="3"><b>{{x.leilao_id}}</b></ion-col>
+          <ion-col size="1"></ion-col>
+          <ion-col size="3">{{x.status_leilao}}</ion-col>
+          <ion-col size="1"></ion-col>
+          <ion-col size="4">{{x.participantes}}</ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+
+    <ng-template #prox>
+      <div *ngIf="usuarios; else prox2">
+        <h3>Usuários Cadastrados:</h3>
+        <ion-grid>
+          <ion-row *ngFor="let x of result" class="ion-justify-content-center" tappable (click)="verLeilao(X.leilao_id)">
+            <ion-col size="3"><b>Usuário:</b></ion-col>
+            <ion-col size="1"></ion-col>
+            <ion-col size="4"><b>Validação:</b></ion-col>
+            <ion-col size="1"></ion-col>
+            <ion-col size="3"><b>Prime:</b></ion-col>
+          
+            <ion-col size="3"><b>{{x.id}}</b></ion-col>
+            <ion-col size="1"></ion-col>
+            <ion-col size="4">{{x.validacao}}</ion-col>
+            <ion-col size="1"></ion-col>
+            <ion-col size="3">{{x.destaque_produto}}</ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+
+      <ng-template #prox2>
+        <div *ngIf="veiculos; else error">
+          <h3>Veículos cadastrados:</h3>
+          <ion-grid>
+            <ion-row *ngFor="let x of result" class="ion-justify-content-center" tappable (click)="verLeilao(X.leilao_id)">
+              <ion-col size="3"><b>Veículo:</b></ion-col>
+              <ion-col size="1"></ion-col>
+              <ion-col size="3"><b>Status:</b></ion-col>
+              <ion-col size="1"></ion-col>
+              <ion-col size="4"><b>Vendedor:</b></ion-col>
+            
+              <ion-col size="3"><b>{{x.veiculo_id}}</b></ion-col>
+              <ion-col size="1"></ion-col>
+              <ion-col size="3">{{x.status_veiculo}}</ion-col>
+              <ion-col size="1"></ion-col>
+              <ion-col size="4">{{x.vendedor_id}}</ion-col>
+            </ion-row>
+          </ion-grid>
+        </div>
+
+        <ng-template #error>
+          <h3>Error 500. Conteúdo não encontrado...</h3>
+        </ng-template>
+      </ng-template>
+    </ng-template>
+  </ng-template>
+
+</ion-content>

@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar color="orange">
+    <img src="../../assets/LOGOQUEMDAMAIS.png" alt="quemDa+Logo" width="110px" class="ion-padding">
+    <ion-buttons slot="end">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="darkf" class="ion-padding ion-text-center">
+  <div class="fieldset">
+    <h3>Avatar atual:</h3>
+    <div class="avatar">
+      <img src="{{ avatar }}" alt="avatar-usuario" width="100%" height="100%">
+    </div>
+    <div class="buttons">
+      <ion-label>Para atualizar o avatar, basta selecionar:</ion-label>
+      <input type="file" (change)="loadImageFromDevice($event)" id="file-input" name="file" accept="image/png, image/jpeg, image/jpg">
+      <ion-button color="orange" shape="round" (click)="updateAvatar()">Atualizar</ion-button>
+    </div>
+  </div>
+</ion-content>

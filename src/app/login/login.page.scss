@@ -1,0 +1,23 @@
+.form div{
+    padding: 7px;
+}
+
+.form ion-input{
+    background: var(--ion-color-darkqs);
+}
+.logo{
+    //background: rgba(255, 255, 255, 0.698);
+    margin-left: 25%;
+    margin-right: 25%;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    border: 2px #000000;
+    border-style: solid;
+}
+
+.form{
+    background: var(--ion-color-darkf);
+    border-radius: 10px;
+    padding-bottom: 5px;
+}

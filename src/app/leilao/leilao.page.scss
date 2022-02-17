@@ -1,0 +1,31 @@
+ion-slides {
+    height: 100%;
+
+    img{
+      width: 329px;
+      height: 164px;
+    }
+};
+
+h2{
+  margin-top: 0;
+};
+
+.fieldset{
+  background: var(--ion-color-darkff);
+  border-radius: 20px;
+  width: 100%;
+
+  .gridCss{
+    background: var(--ion-color-darkqs);
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+  }
+
+  ion-row{
+    background: var(--ion-color-darkqs);
+    margin-bottom: 10px;
+  }
+  
+};

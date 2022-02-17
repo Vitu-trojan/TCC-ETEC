@@ -1,0 +1,25 @@
+.inputs-form ion-input, ion-textarea{
+    background: var(--ion-color-darkqs);
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.inputs-form{
+    margin-bottom: 10px;
+}
+
+.img-form{
+    background: var(--ion-color-darkqs);
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3px;
+    margin-bottom: 15px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+ }
+
+ .img-form input{
+     width: 75%;
+ }

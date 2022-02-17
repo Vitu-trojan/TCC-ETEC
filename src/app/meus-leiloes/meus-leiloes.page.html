@@ -1,0 +1,40 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="orange">
+    <img src="../../assets/LOGOQUEMDAMAIS.png" alt="quemDa+Logo" width="110px" class="ion-padding">
+    <ion-buttons slot="end">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="darkf" class="ion-text-center ion-padding">
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <div class="form">  
+    <ion-text>
+      <h2><b>Seus leilões cadastrados:</b></h2>
+    </ion-text>
+    <ion-grid>
+      <div *ngIf="notFound; else Found">
+        <h3>{{notFound}}</h3>
+      </div>
+      
+      <ng-template #Found>
+        <ion-row *ngFor="let leilao of leiloes" class="ion-justify-content-center">
+          <div class="itens" tappable (click)="selectLeilao(leilao.leilao_id, leilao.status_leilao, leilao.veiculo_id, leilao.imagem_principal)">
+            <img src="{{leilao.imagem_principal}}" alt="imagem_veiculo" width="75%" height="50%">
+            <div class="infoItens">
+              <h4>
+                Leilão: #{{leilao.leilao_id}}<br>           
+                Útimo lance: {{leilao.lance_final || '0' | currency : 'BRL'}}<br>
+                Participantes: {{leilao.participantes}}<br>
+                Status leilão: {{leilao.status_leilao}}<br>
+              </h4>
+            </div>
+          </div>
+        </ion-row>
+      </ng-template>
+    </ion-grid>
+  </div>
+</ion-content>

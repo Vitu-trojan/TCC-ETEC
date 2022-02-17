@@ -1,0 +1,267 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="orange">
+    <img src="../../assets/LOGOQUEMDAMAIS.png" alt="quemDa+Logo" width="110px" class="ion-padding">
+    <ion-buttons slot="end">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="darkf" class="ion-text-center ion-padding">
+  <div class="fieldset ion-padding">
+    <div class="dados">
+      <ion-text>
+        <h2>Leilão #{{leilao_id}}</h2>
+      </ion-text>
+      <ion-slides pager="true">
+        <ion-slide>
+          <img src="{{ imagem }}" alt="Imagem do veículo">
+        </ion-slide>
+        <ion-slide>
+          <img src="{{ imagem2 || imagem }}" alt="Imagem2 do veículo">
+        </ion-slide>
+        <ion-slide>
+          <img src="{{ imagem3 || imagem }}" alt="Imagem3 do veículo">
+        </ion-slide>
+        <ion-slide>
+          <img src="{{ imagem4 || imagem }}" alt="Imagem4 do veículo">
+        </ion-slide>
+        <ion-slide>
+          <img src="{{ imagem5 || imagem }}" alt="Imagem5 do veículo">
+        </ion-slide>
+      </ion-slides>
+    </div>
+    <div class="gridCss">
+      <ion-grid>
+        <div class="infoVeiculo">
+          <ion-row>
+            <ion-col size="5">
+              <ion-text><b>Modelo:</b></ion-text>
+            </ion-col>
+            <ion-col>
+            </ion-col>
+            <ion-col size="5">
+              <ion-text><b>Fabricante:</b></ion-text>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col size="5">
+              <ion-text>{{modelo}}</ion-text>
+            </ion-col>
+            <ion-col>
+            </ion-col>
+            <ion-col size="5">
+              <ion-text>{{fabricante}}</ion-text>
+            </ion-col>
+          </ion-row>
+          
+          <ion-row><ion-col size="12"></ion-col></ion-row>
+          
+          <ion-row>
+            <ion-col size="4">
+              <ion-text><b>Câmbio:</b></ion-text>
+            </ion-col>
+            <ion-col>
+            </ion-col>
+            <ion-col size="3">
+              <ion-text><b>Cor:</b></ion-text>
+            </ion-col>
+            <ion-col>        
+            </ion-col>
+            <ion-col size="4">
+              <ion-text><b>Combustível:</b></ion-text>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col size="4">
+              <ion-text>{{cambio}}</ion-text>
+            </ion-col>
+            <ion-col>
+            </ion-col>
+            <ion-col size="3">
+              <ion-text>{{cor}}</ion-text>
+            </ion-col>
+            <ion-col>        
+            </ion-col>
+            <ion-col size="4">
+              <ion-text>{{combustivel}}</ion-text>
+            </ion-col>
+          </ion-row>
+          
+          <ion-row><ion-col size="12"></ion-col></ion-row>
+          
+          <ion-row>
+            <ion-col size="4">
+              <ion-text><b>Carroceria:</b></ion-text>
+          </ion-col>
+          <ion-col>
+          </ion-col>
+          <ion-col size="3">
+            <ion-text><b>ano:</b></ion-text>
+          </ion-col>
+          <ion-col>        
+          </ion-col>
+          <ion-col size="4">
+            <ion-text><b>Condição:</b></ion-text>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="4">
+            <ion-text>{{carroceria}}</ion-text>
+          </ion-col>
+          <ion-col>
+          </ion-col>
+          <ion-col size="3">
+            <ion-text>{{ano}}</ion-text>
+          </ion-col>
+          <ion-col>        
+          </ion-col>
+          <ion-col size="4">
+            <ion-text>{{condicao}}</ion-text>
+          </ion-col>
+        </ion-row>
+        
+        <ion-row><ion-col size="12"></ion-col></ion-row>
+        
+        <ion-row>
+          <ion-col size="4"></ion-col>
+          <ion-col size="4">
+            <ion-text><b>Infomações adicionais:</b></ion-text>
+          </ion-col>
+          <ion-col size="4"></ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="12">
+            <ion-text>{{info || "O anunciante não deixou Infomações adicionais."}}</ion-text>
+          </ion-col>
+        </ion-row>
+        </div>
+      
+        <ion-row><ion-col size="12"></ion-col></ion-row>
+        <ion-row><ion-col size="12"></ion-col></ion-row>
+      
+        <div class="infoVendedor">
+          <ion-row>
+          <ion-col size="5">
+            <ion-text><b>Anunciado por:</b></ion-text>        
+          </ion-col>
+          <ion-col size="4">
+            <ion-text><b>Conta:</b></ion-text>
+          </ion-col>
+          <ion-col size="3">
+            <ion-text><b>Leilões criados:</b></ion-text>    
+          </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col size="5">
+              <ion-text>{{nome}}</ion-text>        
+            </ion-col>
+            <ion-col size="4">
+              <ion-text>{{status_destaque}}</ion-text>    
+            </ion-col>
+            <ion-col size="3">
+              <ion-text>{{leiloes_criados}}</ion-text>    
+            </ion-col>
+          </ion-row>
+          
+          <ion-row><ion-col size="12"></ion-col></ion-row>
+          
+          <ion-row>
+            <ion-col size="5">
+              <ion-text><b>Link externo:</b></ion-text>        
+            </ion-col>
+            <ion-col>        
+            </ion-col>
+            <ion-col size="5">
+              <ion-text><b>Telefone:</b></ion-text>    
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col size="6">
+              <ion-text>{{link}}</ion-text>        
+            </ion-col>
+            <ion-col>        
+            </ion-col>
+            <ion-col size="5">
+              <ion-text>{{telefone}}</ion-text>    
+            </ion-col>
+          </ion-row>
+        </div>
+
+        <ion-row><ion-col size="12"></ion-col></ion-row>
+        <ion-row><ion-col size="12"></ion-col></ion-row>
+        
+        <div class="infoLeilao">
+          <ion-row>
+            <ion-col>        
+            </ion-col>
+            <ion-col size="5">
+              <ion-text><b>Lance inicial:</b></ion-text>
+            </ion-col>
+            <ion-col size="5">
+              <ion-text><b>Último lance:</b></ion-text>
+            </ion-col>
+            <ion-col>        
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>        
+            </ion-col>
+            <ion-col size="5">
+              <ion-text>{{lance_inicial | currency : 'BRL'}}</ion-text>
+            </ion-col>
+            <ion-col size="5">
+              <ion-text>{{lance_final || '0' | currency : 'BRL'}}</ion-text>
+            </ion-col>
+            <ion-col>        
+            </ion-col>
+          </ion-row>
+        </div>
+      </ion-grid>
+    </div>
+    <div class="participar">
+      <div *ngIf="logado; else login">
+
+        <div *ngIf="vendedor; else comprador">
+          <h3>Últimos lances:</h3>
+
+          <div *ngIf="notFound; else Found">
+            <h3>{{notFound}}</h3>
+          </div>
+
+          <ng-template #Found>
+            <ion-grid>
+              <ion-row *ngFor="let user of rank" class="ion-justify-content-center">
+                <ion-col size="1"><b>#</b></ion-col>
+                <ion-col size="5"><b>Nome:</b></ion-col>
+                <ion-col size="1"></ion-col>
+                <ion-col size="5"><b>Lance:</b></ion-col>
+                
+                <ion-col size="1"><b>{{user.posicao}}</b></ion-col>
+                <ion-col size="5"><b>{{user.nome}}</b></ion-col>
+                <ion-col size="1"></ion-col>
+                <ion-col size="5"><b>{{user.lance | currency : 'BRL'}}</b></ion-col>
+              </ion-row>
+            </ion-grid>
+          </ng-template>
+
+        </div>
+        
+        <ng-template #comprador>
+          <div>
+            <ion-input type="number" name="lance" placeholder="Dê seu lance: Ex: 20 000 " [(ngModel)]="lance"></ion-input>
+          </div>
+          <ion-button color="orange" shape="round" (click)="participarLeilao(lance)">Participar</ion-button>
+        </ng-template>
+      </div>
+
+      <ng-template #login>
+        <div>      
+          <ion-text><b>Se interessou pelo anuncio?<br>Para participar faça login!</b></ion-text>
+        </div>
+        <ion-button color="orange" shape="round" (click)="goToLogin()">Fazer login</ion-button>
+      </ng-template>
+    </div>
+  </div>
+</ion-content>
+  

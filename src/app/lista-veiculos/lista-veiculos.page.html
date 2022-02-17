@@ -1,0 +1,35 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="orange">
+    <img src="../../assets/LOGOQUEMDAMAIS.png" alt="quemDa+Logo" width="110px" class="ion-padding">
+    <ion-buttons slot="end">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="darkf" class="ion-padding">
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  <div class="ion-text-center form">
+    <h2>Seus veículos cadastrados:</h2>
+    <ion-grid>
+      <ion-row *ngFor="let item of results" class="ion-justify-content-center">
+        <div class="itens" tappable (click)="verVeiculo(item.veiculo_id, item.status_veiculo)">
+          <img src="{{ item.path_imagem }}" alt="imagem_veiculo" width="250px" height="130px">
+          <div class="infoItens">
+            <h4>
+              Fabricante: {{item.fabricante}}<br>
+              Modelo: {{item.modelo}}<br>
+              Ano: {{item.ano}}<br>
+              Câmbio: {{item.cambio}}<br>
+              Condição: {{item.condicao}}<br>
+              Status do veículo: {{item.status_veiculo}}<br>
+            </h4>
+          </div>
+        </div>
+      </ion-row>
+    </ion-grid>
+  </div>
+</ion-content>

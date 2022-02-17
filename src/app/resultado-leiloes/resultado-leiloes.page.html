@@ -1,0 +1,32 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="orange">
+    <img src="../../assets/LOGOQUEMDAMAIS.png" alt="quemDa+Logo" width="110px" class="ion-padding">
+    <ion-buttons slot="end">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="darkf" class="ion-text-center">
+    <h2>Resultados da pesquisa:</h2>
+    <div *ngIf="notFound;  else found">
+      <h3>{{ notFound }}</h3>
+    </div>
+  
+    <ng-template #found>
+      <ion-grid>
+        <ion-row *ngFor="let anuncio of result" class="ion-justify-content-center">
+          <div class="itens" tappable (click)="verLeilao(anuncio.leilao_id)">
+            <img src="{{ anuncio.imagem_principal }}" alt="imagem_veiculo" width="75%" height="50%">
+            <div class="infoItens">
+              <h4>
+                {{anuncio.fabricante}} {{anuncio.modelo}} {{anuncio.ano}}<br>
+                Útimo lance: R$: {{anuncio.lance_final || '0'}}<br>
+                Anúncio disponível até: {{anuncio.data_final}}<br>
+              </h4>
+            </div>
+          </div>
+        </ion-row>
+      </ion-grid>
+    </ng-template>
+</ion-content>

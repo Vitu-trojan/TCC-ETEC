@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar color="darkf">
+    <ion-buttons>
+      <ion-back-button (click)="goToHome()" color="orange"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="orange" class="ion-padding">
+  <div class="logo">
+    <img src="../../assets/LOGOQUEMDAMAIS.png" alt="quemDa+Logo" width="200px" class="ion-padding">
+  </div>
+  <form class="ion-text-center">
+    <div class="form">
+      <div class="inputArea">  
+        <div>
+          <ion-input type="text" name="email" placeholder="Digite seu e-mail" [(ngModel)]="email"></ion-input>
+        </div>
+        
+        <div>
+          <ion-input type="text" name="cod" placeholder="Código de validação" [(ngModel)]="cod"></ion-input>
+        </div>
+        
+        <div>
+          <ion-input type="password" name="senha" placeholder="Digite sua senha" [(ngModel)]="senha"></ion-input>
+        </div>
+
+      </div>   
+      <ion-button color="orange"  shape="round" (click)="validateInputs(email, cod, senha)">Entrar</ion-button>
+    </div>
+    <ion-button color="darkff" shape="round" (click)="esqueciMinhaSenha()">Esqueci minha senha</ion-button>
+    <ion-button color="darkff" shape="round" (click)="goToCadastro()">Cadastre-se</ion-button>
+  </form>
+</ion-content>

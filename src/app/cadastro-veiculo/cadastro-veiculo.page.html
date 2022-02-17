@@ -1,0 +1,88 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="orange">
+    <img src="../../assets/LOGOQUEMDAMAIS.png" alt="quemDa+Logo" width="110px" class="ion-padding">
+    <ion-buttons slot="end">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="darkf">
+  <div class="ion-text-center">
+    <h2>Informações do veículo:</h2>
+  </div>
+  <form action="" class="ion-text-center">
+
+    <div class="inputs-form">
+      <ion-label>Renavam:</ion-label>
+      <ion-input type="text" name="renavam" maxlength="11" placeholder="1234567890A*" [(ngModel)]="renavam"></ion-input>
+    </div>
+
+    <div class="inputs-form">
+      <ion-label>Fabricante:</ion-label>
+      <ion-input type="text" name="fabricante" placeholder="Tabajara*" [(ngModel)]="fabricante"></ion-input>
+    </div>
+
+    <div class="inputs-form">
+      <ion-label>Modelo:</ion-label>
+      <ion-input type="text" name="modelo" placeholder="Invisible*" [(ngModel)]="modelo">
+      </ion-input>
+    </div>
+
+    <div class="inputs-form">
+      <ion-label>Ano:</ion-label>
+      <ion-input type="number" name="ano" maxlength="4" placeholder="2021*" [(ngModel)]="ano"></ion-input>
+    </div>
+
+    <div class="inputs-form">
+      <ion-label>Câmbio:</ion-label>
+      <ion-input type="text" name="cambio" placeholder="Manual*" [(ngModel)]="cambio"></ion-input>
+    </div>
+
+    <div class="inputs-form">
+      <ion-label>Cor:</ion-label>
+      <ion-input type="text" name="cor" placeholder="Vermelho*" [(ngModel)]="cor"></ion-input>
+    </div>
+
+    <div class="inputs-form">
+      <ion-label>Carroceria:</ion-label>
+      <ion-input type="text" name="carroceria" placeholder="Sedan*" [(ngModel)]="carroceria"></ion-input>
+    </div>
+
+    <div class="inputs-form">
+      <ion-label>Combustível:</ion-label>
+      <ion-input type="text" name="combustivel" placeholder="Gasolina*" [(ngModel)]="combustivel"></ion-input>
+    </div>
+
+    <div class="inputs-form">
+      <ion-label>Condição:</ion-label>
+      <ion-input type="text" name="condicao" placeholder="Novo*" [(ngModel)]="condicao"></ion-input>
+    </div>
+
+    <div class="inputs-form">
+      <ion-label>Imagens do veículo: </ion-label>
+      <div class="img-form">
+        <input type="file" (change)="loadImageFromDevice($event)" id="file-input" name="file" accept="image/png, image/jpeg, image/jpg">
+      </div>
+      <div class="img-form">
+        <input type="file" (change)="loadImageFromDevice2($event)" id="file-input" name="file" accept="image/png, image/jpeg, image/jpg">
+      </div>
+      <div class="img-form">
+        <input type="file" (change)="loadImageFromDevice3($event)" id="file-input" name="file" accept="image/png, image/jpeg, image/jpg">
+      </div>
+      <div class="img-form">
+        <input type="file" (change)="loadImageFromDevice4($event)" id="file-input" name="file" accept="image/png, image/jpeg, image/jpg">
+      </div>
+      <div class="img-form">
+        <input type="file" (change)="loadImageFromDevice5($event)" id="file-input" name="file" accept="image/png, image/jpeg, image/jpg">
+      </div>
+    </div>
+
+    <div class="inputs-form">
+      <ion-label>Informações adicionais:</ion-label>
+      <ion-textarea name="info" maxlength="255" placeholder="Conte mais sobre o veículo..." [(ngModel)]="info"></ion-textarea>
+    </div>
+
+    <ion-button color="orange" shape="round" (click)="getInfoCadastro(renavam, fabricante, modelo, ano, cambio, cor, carroceria, combustivel, condicao, info)">CADASTRAR</ion-button>
+  </form>
+</ion-content>

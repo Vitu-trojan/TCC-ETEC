@@ -1,0 +1,75 @@
+<ion-header>
+  <ion-toolbar color="darkf">
+    <ion-buttons>
+      <ion-back-button defaultHref="/" color="orange"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="orange">
+  <div class="ion-text-center">
+    <h2>Informe seus dados:</h2>
+  </div>
+  <form action="" class="ion-text-center">
+
+    <div class="inputs-form">
+      <ion-label>CPF/CNPJ:</ion-label>
+      <ion-input type="text" name="pk" [(ngModel)]="pk" maxlength="14" placeholder="Apenas os números *"></ion-input>
+    </div>
+
+    <div class="inputs-form">
+      <ion-label>Nome:</ion-label>
+      <ion-input type="text" name="nome" [(ngModel)]="nome" placeholder="John Doe *"></ion-input>
+    </div>
+
+    <div class="inputs-form">
+      <ion-label>Data de nascimento: *</ion-label>
+      <ion-input class="dtN" type="date" name="dt_nasc" [(ngModel)]="dt_nasc">
+      </ion-input>
+    </div>
+
+    <div class="inputs-form">
+      <ion-label>E-mail:</ion-label>
+      <ion-input type="email" name="email" [(ngModel)]="email" placeholder="john@doe.com *"></ion-input>
+    </div>
+
+    <div class="inputs-form">
+      <ion-label>Confirmação e-mail:</ion-label>
+      <ion-input type="email" name="email2" [(ngModel)]="email2" placeholder="john@doe.com *"></ion-input>
+    </div>
+
+    <div class="inputs-form">
+      <ion-label>Telefone:</ion-label>
+      <ion-input type="tel" name="tel" [(ngModel)]="tel" maxlength="11" placeholder="Apenas os números com o DDD *"></ion-input>
+    </div>
+
+    <div class="inputs-form">
+      <ion-label>Endereço:</ion-label>
+      <ion-input type="text" name="endereco" [(ngModel)]="endereco" placeholder="Rua: flores oliveira - Pq. azul"></ion-input>
+    </div>
+
+    <div class="inputs-form">
+      <ion-label>Avatar: *</ion-label>
+      <div class="img-form">
+        <input type="file" (change)="loadImageFromDevice($event)" id="file-input" name="file" accept="image/png, image/jpeg, image/jpg">
+      </div>
+    </div>
+
+    <div class="inputs-form">
+      <ion-label>Link:</ion-label>
+      <ion-input type="url" name="link" [(ngModel)]="link" placeholder="www.myshop.com"></ion-input>
+    </div>
+
+    <div class="inputs-form">
+      <ion-label>Senha:</ion-label>
+      <ion-input type="password" name="senha" [(ngModel)]="senha" placeholder="************"></ion-input>
+    </div>
+
+    <div class="inputs-form">
+      <ion-label>Confirme sua senha:</ion-label>
+      <ion-input type="password" name="senha2" [(ngModel)]="senha2" placeholder="************"></ion-input>
+    </div>
+
+    <ion-button color="darkf" shape="round" (click)="getInfoCadastrar(pk, nome, dt_nasc, email, email2, tel, endereco, link, senha, senha2)">REGISTRAR-SE</ion-button>
+  </form>
+</ion-content>
