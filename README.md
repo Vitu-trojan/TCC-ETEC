@@ -1,5 +1,5 @@
 ﻿# Trabalho de conclusão de curso - ETEC
-Este projeto contém uma **aplicação mobile** e o código fonte de uma **API** própria que fazia a integração entre a aplicação web e mobile até o banco de dados, fornecendo assim, os mesmos dados em "tempo real" para ambas aplicações.
+Este projeto contém uma **aplicação mobile** e o código fonte de uma **API** ( https://github.com/Vitu-trojan/TCC-API ) própria que fazia a integração entre a aplicação web e mobile até o banco de dados, fornecendo assim, os mesmos dados em "tempo real" para ambas aplicações.
 
 Nossa ideia para o **TCC** foi criar uma empresa fictícia chamada **QuemDaMais**, que faria uma conexão entre alguém que quer vender um veículo e alguém interessado em comprar este veículo. Tendo como diferencial o método de negociação seria por meio de lances.
 
